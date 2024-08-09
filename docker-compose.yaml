@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    image: python:3.10
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "apt-get update && apt-get install -y libgl1-mesa-glx && pip install -r requirements.txt && python manage.py migrate && python manage.py runserver 0.0.0.0:8010"
+    ports:
+      - "8010:8010"
+    environment:
+      - LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+      - LIBGL_SO_1_PATH=/usr/lib/x86_64-linux-gnu

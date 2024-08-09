@@ -1,0 +1,4 @@
+# created by virtualenv automatically
+Questions/
+.venv
+db.sqlite3

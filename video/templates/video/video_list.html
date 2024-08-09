@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+{% load my_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if object_list %}
+    {% for object in object_list %}
+        Видео: {{ object.title}}  <a href="{% url 'video:download_file' object.pk %}">Скачать</a>
+        <br>
+    {% endfor %}
+{% else %}
+Нет видео
+{% endif %}
+
+</body>
+</html>

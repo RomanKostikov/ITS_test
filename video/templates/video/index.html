@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+{% load my_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if object %}
+Видео: {{ object.title}}  <a href="{% url 'video:download_file' object.pk %}">Скачать</a>
+{% endif %}
+<br>
+<a href="{% url 'video:videos' %}">Все видео</a>
+</body>
+</html>
