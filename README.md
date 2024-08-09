@@ -46,5 +46,5 @@ python manage.py createsuperuser
 Пример создания видео:
 
 ```
-http://127.0.0.1:8000?message=Текст сообщения
+http://127.0.0.1:8000/gettext/?text=Текст сообщения
 ```
